@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aircall — FAQ (2026)</title>
+  <meta name="description" content="Independent FAQ for cloud phone systems: official site clarification, hardware needs, CRM integrations, analytics and missed calls." />
+
+  <style>
+    :root{
+      --bg:#fbfbfd;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --line:rgba(15,23,42,.12);
+
+      --c1:#ff4d6d;
+      --c2:#ff8a00;
+
+      --shadow: 0 16px 40px rgba(15,23,42,.10);
+      --radius:26px;
+      --max:1040px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(255,77,109,.10), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(255,138,0,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 0%, rgba(255,0,128,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px}
+
+    /* =========================
+       TOP NAV (NEW)
+    ========================== */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .navInner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .navLeft{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 210px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:1000}
+    .logoMark{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 6px rgba(255,77,109,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:1000; font-size:14px;
+      border:1px solid rgba(255,255,255,.22);
+      flex:0 0 auto;
+    }
+    .pill{
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      background:rgba(255,255,255,.85);
+      white-space:nowrap;
+    }
+
+    .navLinks{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .nav a.link{
+      font-size:13px;
+      font-weight:900;
+      color:#111827;
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition:.15s ease;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .nav a.link:hover{
+      background:rgba(255,77,109,.06);
+      border-color: rgba(255,77,109,.16);
+      transform: translateY(-1px);
+    }
+    .nav a.link.active{
+      background:linear-gradient(135deg, rgba(255,77,109,.14), rgba(255,138,0,.10));
+      border-color: rgba(255,77,109,.22);
+    }
+
+    .navRight{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 210px;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 18px;
+      border-radius:16px;
+      font-weight:1000;
+      border:1px solid rgba(15,23,42,.12);
+      cursor:pointer;
+      transition:.18s ease;
+      user-select:none;
+      background:#fff;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 40px rgba(255,77,109,.18);
+    }
+    .btn.secondary{background:rgba(255,255,255,.92); color:var(--text)}
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.02)}
+
+    .burger{
+      display:none;
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.92);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:.18s ease;
+    }
+    .burger:hover{transform:translateY(-1px); filter:brightness(1.02)}
+    .burger svg{display:block}
+
+    .mobileMenu{
+      display:none;
+      border-top:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.92);
+    }
+    .mobileMenu .mmInner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px 16px;
+      display:grid;
+      gap:10px;
+    }
+    .mmGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:8px;
+    }
+    .mmGrid a{
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(15,23,42,.10);
+      background:#fff;
+      font-weight:950;
+      color:#111827;
+    }
+    .mmGrid a:hover{
+      background:rgba(255,77,109,.06);
+      border-color: rgba(255,77,109,.18);
+    }
+
+    @media(max-width:900px){
+      .navLinks{display:none}
+      .navRight .pill{display:none}
+      .burger{display:flex}
+      .navRight{min-width:auto}
+      .navLeft{min-width:auto}
+    }
+
+    .spacer{height:6px}
+
+    /* =========================
+       ORIGINAL PAGE STYLES (UNCHANGED)
+    ========================== */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:6px 0 16px;
+    }
+
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-top:10px;
+    }
+
+    h1{
+      font-size:34px;
+      line-height:1.08;
+      margin:0 0 10px;
+      letter-spacing:-.7px;
+    }
+    @media(max-width:520px){ h1{font-size:28px} }
+
+    .hglow{
+      background: linear-gradient(135deg, var(--c1), var(--c2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow: 0 18px 40px rgba(255,77,109,.12);
+    }
+
+    .sub{
+      color:var(--muted);
+      font-size:16px;
+      margin:0 0 16px;
+      max-width:75ch;
+    }
+
+    .btnrow{display:flex; gap:12px; flex-wrap:wrap}
+
+    /* FAQ */
+    .faqGrid{display:grid; gap:10px; margin-top:10px}
+    details{
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.85);
+      border-radius:16px;
+      padding:14px;
+    }
+    summary{cursor:pointer; font-weight:1000; color:var(--text)}
+    details p{margin:10px 0 0; color:var(--muted); font-size:14px}
+
+    .footer{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:12px;
+      opacity:.95;
+    }
+    .footer a{text-decoration:underline}
+
+    .sticky{
+      position:fixed; left:0; right:0; bottom:0;
+      background:rgba(255,255,255,.92);
+      border-top:1px solid rgba(15,23,42,.12);
+      padding:10px 12px;
+      z-index:50;
+      backdrop-filter: blur(10px);
+    }
+    .sticky .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .note{margin-top:10px; color:var(--muted); font-size:13px}
+    .sticky .txt{font-size:13px; color:var(--muted)}
+    @media(max-width:700px){ .sticky .txt{display:none} }
+  </style>
+
+  <script type="text/javascript" src="https://inpmz.ttrk.io/track.js?rtkcmpid=699559c857a3f63c0376a292"></script>
+</head>
+
+<body>
+  <!-- NAVBAR (ADDED) -->
+  <header class="nav" aria-label="Site navigation">
+    <div class="navInner">
+      <div class="navLeft">
+        <a class="brand" href="index.html" aria-label="Home">
+          <div class="logoMark">AC</div>
+          <div>Aircall Quick Guide</div>
+        </a>
+      </div>
+
+      <nav class="navLinks" aria-label="Primary">
+        <a class="link" href="index.html">Pricing</a>
+        <a class="link" href="features.html">Top Features</a>
+        <a class="link" href="comparison.html">Comparison</a>
+        <a class="link active" href="faq.html">FAQ</a>
+      </nav>
+
+      <div class="navRight">
+
+        <a class="btn primary" id="ctaNav" href="#" rel="nofollow noopener" target="_blank">
+          Open Provider →
+        </a>
+
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 7h16a1 1 0 1 0 0-2H4a1 1 0 1 0 0 2zm16 4H4a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2zm0 6H4a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobileMenu" id="mobileMenu" hidden>
+      <div class="mmInner">
+        <div class="mmGrid">
+          <a href="index.html">Pricing</a>
+          <a href="features.html">Top Features</a>
+          <a href="comparison.html">Comparison</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <a class="btn primary" id="ctaMobile" href="#" rel="nofollow noopener" target="_blank" style="width:100%">
+          Open Provider →
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="spacer"></div>
+
+    <div class="panel">
+      <h1><span class="hglow">FAQ</span> (common buyer questions)</h1>
+      <p class="sub">
+        Quick answers to the most common questions. For exact product details and current pricing,
+        always confirm on the provider website.
+      </p>
+
+      <div class="faqGrid">
+        <details>
+          <summary>Is this the official website?</summary>
+          <p>No. This is an independent guide page. Buttons open the provider in a new tab.</p>
+        </details>
+
+        <details>
+          <summary>Will my team need hardware?</summary>
+          <p>Most cloud phone systems work on web and mobile apps without desk phones.</p>
+        </details>
+
+        <details>
+          <summary>Does it work with HubSpot / Salesforce?</summary>
+          <p>Many modern platforms support CRM integrations. Confirm supported integrations on the provider website.</p>
+        </details>
+
+        <details>
+          <summary>Can I track missed calls and performance?</summary>
+          <p>Yes. Analytics dashboards typically show answer rate, missed calls, peak hours, and call volume by user/team.</p>
+        </details>
+      </div>
+
+      <div class="btnrow" style="margin-top:14px">
+        <a class="btn primary" id="ctaBottom" href="#" rel="nofollow noopener" target="_blank">
+          Visit Provider Website → (Plans & Pricing)
+        </a>
+      </div>
+
+       <div class="note"><br>
+           Disclosure: This website contains affiliate links, which means we may receive a commission if you click a link and purchase something that we have recommended. While clicking these links won't cost you any extra money, it helps us keep this site up and running. We only promote products or services we genuinely believe will add value to our readers. As an Associate and affiliate for other programs, we earn from qualifying purchases. All affiliate relationships are disclosed in accordance with the Federal Trade Commission’s 16 CFR, Part 255: “Guides Concerning the Use of Endorsements and Testimonials in Advertising.”
+            <br><br>
+        <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a>
+        <br><br>
+            This page is NOT the official Aircall website.
+          </div>
+    </div>
+    </div>
+
+  </div>
+
+  <div class="sticky">
+    <div class="inner">
+      <div class="txt">Compare plans & confirm details on the provider website.</div>
+      <a class="btn primary" id="ctaSticky" href="#" rel="nofollow noopener" target="_blank">Check Pricing →</a>
+    </div>
+  </div>
+
+  <script>
+    // Destination link (affiliate / tracking)
+    const OUT_URL = "https://inpmz.ttrk.io/click";
+
+    const ctas = ["ctaNav","ctaMobile","ctaBottom","ctaSticky"];
+    ctas.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = OUT_URL;
+    });
+
+    function trackOutbound(label){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "outbound_click",
+        outbound_label: label,
+        outbound_url: OUT_URL
+      });
+    }
+
+    ctas.forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.addEventListener("click", function(){ trackOutbound(id); });
+    });
+
+    // Mobile menu toggle
+    const burger = document.getElementById("burger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    burger.addEventListener("click", () => {
+      const isOpen = burger.getAttribute("aria-expanded") === "true";
+      burger.setAttribute("aria-expanded", String(!isOpen));
+      mobileMenu.hidden = isOpen;
+      mobileMenu.style.display = isOpen ? "none" : "block";
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.addEventListener("click", (e) => {
+      const a = e.target.closest("a");
+      if(!a) return;
+      burger.setAttribute("aria-expanded", "false");
+      mobileMenu.hidden = true;
+      mobileMenu.style.display = "none";
+    });
+
+    // Ensure correct initial state
+    mobileMenu.hidden = true;
+    mobileMenu.style.display = "none";
+  </script>
+</body>
+</html>
